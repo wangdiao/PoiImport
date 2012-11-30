@@ -77,7 +77,8 @@ public class AditorJdbcDataSave implements DataStrategy {
 			String name = datamap.get("姓名");
 
 			String sex = datamap.get("性别");
-			String idcardno = datamap.get("身份证号");
+			String idcardno = datamap.get("证书编号");
+			String idcardnoii = datamap.get("身份证号");
 			String title = datamap.get("职称");
 			String phone = null;
 			String mobile = null;
@@ -86,8 +87,8 @@ public class AditorJdbcDataSave implements DataStrategy {
 			String auditorstatus = "1";
 			String recordstatus = "1";
 			String field1 = datamap.get("所属部门");
-			if (name == null || "".equals(name) || title == null
-					|| "".equals(title))
+			if (name == null || "".equals(name) || idcardnoii == null
+					|| "".equals(idcardnoii))
 				return;
 			datalist.add(auditorid);
 			datalist.add(name);

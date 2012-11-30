@@ -17,7 +17,7 @@ public class ImportMain {
 			try {
 				DataStrategy strategy = new AditorJdbcDataSave(filename);
 				context.setDataStrategy(strategy);
-				context.saveFileXLS(path, 1);
+				context.saveFileXLS(path, 2);//北京上海等头为两行的改为1
 				strategy.close();
 				System.out.println(filename+"导入完成!!!!");
 			} catch (Exception e) {

@@ -42,7 +42,7 @@ public class ImportContext {
 
 			HSSFRow row;
 			List<String> rowList = new ArrayList<String>();
-			for (int i = 1; i <= sheet.getLastRowNum(); ++i) {
+			for (int i = 0; i <= sheet.getLastRowNum(); ++i) {
 				row = sheet.getRow(i);
 				if (row == null)
 					continue;
@@ -90,11 +90,10 @@ public class ImportContext {
 
 
 	public Map<String, String> getDataMap(List<String> datalist) {
-		if (datalist.size() < headlist.size())
-			return null;
 		Map<String, String> map = new HashMap<String, String>();
 		for (int i = 0; i < headlist.size(); i++) {
-			map.put(headlist.get(i), datalist.get(i));
+			String data = datalist.size()>i? datalist.get(i):null;
+			map.put(headlist.get(i), data);
 		}
 		return map;
 	}
